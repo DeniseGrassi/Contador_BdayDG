@@ -1,0 +1,63 @@
+@use 'variables';
+
+
+.event {
+    padding: 40px 0;    
+    background-color: variables.$purple;
+    color: variables.$textColor;
+
+    &--image-left {  /* modificador apenas p atracoes */
+        background-color: variables.$fundoCorCaixa;        
+        .container {
+            flex-direction: row-reverse;            
+        }
+    }
+
+
+    .container{
+        display: flex; /* para a img ficar na direita e o texto na esquerda*/
+        gap: 60px;  /* aplica um espaçamento entre a img e o text, independente que lado esteja a img */
+    }
+
+    &__image {
+        max-width: 450px;
+        height: 400px;
+        background-size:cover;
+        // padding-left: 12px;
+        // padding-right: 12px;        
+    }
+
+    &__details {
+        &__title{
+            font-size: 20px;
+            font-weight:bold;
+            margin-bottom: 16px;
+            
+        }
+
+        &__description{
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+
+    @media (max-width: 640px) {
+        .container{
+            display: block; /* para a img ficar abaixo do texto */    
+        }
+
+        &__image {
+            display: block;
+            margin: auto;
+            width: 100%; 
+            height: auto; 
+        }
+
+        &__details {
+            margin-right: 0;
+            margin-bottom: 16px;
+            
+        }
+    }
+}
