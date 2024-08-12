@@ -1,4 +1,4 @@
-
+AOS.init();  
 
 const dataDoEvento = new Date("Oct 07, 2024 19:00:00"); /* atribuindo na constante dataDoEvento a data do evento futuro*/
 const timeStampDoEvento = dataDoEvento.getTime();  /* o getTime transforma a data do evento em milisegundos */
