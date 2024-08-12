@@ -1,0 +1,51 @@
+@use 'variables';
+
+.hero {
+    padding-bottom: 100px;
+    padding-top: 94px;
+    background-image: url(../images/denise.jpeg); /* Define uma imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;  
+
+    /* Define o elemento .hero como um contêiner para posicionamento absoluto dos elementos filhos. Sem isso, o position: absolute no ::before não funcionaria corretamente em relação ao .hero. */
+
+    .container {
+        position: relative; 
+    }
+
+    &::before {  /* adiciona uma camada de cor semi-transparente */
+        position: absolute;         /* precisa de um position:relative */
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        background-color: variables.$textColor;
+        content: '';        /* é necessario colocar esse conj vazio pra poder ser renderizado*/
+        opacity: .7 ;       /* 70% opacidade e 30% de transparencia */
+    }
+
+    &__text {
+        color: variables.$fundoCorCaixa;
+        margin-top: 64px;
+        margin-bottom: 64px;
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: 800;
+        text-align: center;
+    }
+
+
+
+    @media (max-width: 640px) {
+        padding: 40px 0;
+
+        &__text {
+            font-size: 22px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+
+    }
+
+}

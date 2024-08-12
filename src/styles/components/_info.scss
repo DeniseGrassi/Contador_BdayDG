@@ -1,0 +1,50 @@
+@use '../variables'; 
+// dois pontos e / pq esta saindo da pasta 
+
+
+.infos-bar {  /* div de toda a caixa*/
+    padding: 16px 24px;
+    background-color: variables.$fundoCorCaixa;
+    display: grid; 
+    grid-template-columns: repeat(3, auto);
+    
+
+    &__infos{   /* p os itens: local e quando */ 
+        display: flex; /* para local e qnd um ao lado do outro */
+        justify-content: center;
+        gap: 100px;  /* espaçamento entre eles*/
+        text-align: center;
+
+        &__item{
+            font-size: 16px;
+            color:variables.$textColor;
+
+            b {  /* negrito apenas para as palavras local e quando */
+                font-size: 18px;
+                display: block;
+                color:variables.$textColor;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+
+        .infos-bar {
+            gap:150px;
+            
+        }
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+
+        &__infos{ 
+            display: block;
+
+            &__item{
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
