@@ -28,23 +28,38 @@
     }
 
     @media (max-width: 1024px) {
-
-        .infos-bar {
-            gap:150px;
-            
-        }
+        gap: 150px;
     }
 
     @media (max-width: 640px) {
         display: block;
 
-        &__infos{ 
+        &__infos {
             display: block;
 
-            &__item{
+            &__item {
                 margin-bottom: 24px;
+            }
+        }
+
+}
+
+@media (max-width: 320px) {
+    padding: 12px 16px;
+
+    &__infos {
+        gap: 16px;
+
+        &__item {
+            font-size: 14px;
+            margin-bottom: 16px;
+
+            b {
+                font-size: 16px;
             }
         }
     }
 }
 
+
+}
