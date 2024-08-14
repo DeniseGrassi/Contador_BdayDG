@@ -26,40 +26,82 @@
             }
         }
     }
+}
 
-    @media (max-width: 1024px) {
-        gap: 150px;
+@media (max-width: 576px) {    //TELAS MENORES
+
+    .infos-bar {
+        grid-template-columns: 1fr;   
+        margin: 15px;     
+    
+        &__infos {
+            flex-direction: column;
+            gap: 10px;
+
+            &__item{                
+                padding-bottom: 20px;
+            }
+        }
     }
+    
+}
 
-    @media (max-width: 640px) {
-        display: block;
+@media (min-width: 577px) and (max-width: 768px) {  // Telas medias tablets
+
+    .infos-bar {
+        margin: 15px;
+        grid-template-columns: 1fr;
+        align-items: center;        
+        justify-items: center;        
+        
+    
+        &__infos {
+            gap: 30px;
+            
+            &__item{
+                white-space: nowrap;
+                padding-bottom: 20px;
+            }
+        }    
+    }
+} 
+
+
+@media (min-width: 769px) and (max-width: 992px) {  // Telas grandes (desktops)
+    .infos-bar {
+        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center;         
+        margin: 0 20px;
+
 
         &__infos {
-            display: block;
-
-            &__item {
-                margin-bottom: 24px;
-            }
-        }
-
-}
-
-@media (max-width: 320px) {
-    padding: 12px 16px;
-
-    &__infos {
-        gap: 16px;
-
-        &__item {
-            font-size: 14px;
-            margin-bottom: 16px;
-
-            b {
-                font-size: 16px;
+            gap: 80px;
+            
+            &__item{
+                white-space: nowrap;
             }
         }
     }
+    
 }
 
 
+@media (min-width: 1200px) { // Telas extra grandes
+    .infos-bar {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; 
+        grid-template-columns: repeat(3, 1fr);
+
+        &__infos {
+            gap: 100px;
+
+            &__item{
+                white-space: nowrap;
+            }
+        }
+    }  
 }
+

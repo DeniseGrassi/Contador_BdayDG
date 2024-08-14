@@ -12,21 +12,17 @@
     list-style: none;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;  /* apareceu um scroll p direita e embaixo, o hidden elimina */
+    background-color: variables.$textColor;
+}
+
 .container {
     max-width: 960px;
 
     width: 100%;
     margin: 0 auto;
 
-    @media (max-width: 640px ) {
-        max-width: 80%;
-    }
-
-    @media (max-width: 1024px ) {
-        max-width: 90%;
-    }
 }
 
-body {
-    background-color: variables.$textColor;
-}
